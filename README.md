@@ -1,3 +1,3 @@
-# 9 Hour Business Project
+# 9 Hour Hackfest
 
 
