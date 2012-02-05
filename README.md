@@ -1,4 +1,4 @@
 # 9 Hour Hoedown
 
-## Simple Sinatra Forwarder
+## Sinatra API and Client Generator
 
