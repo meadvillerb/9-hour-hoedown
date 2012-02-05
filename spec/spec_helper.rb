@@ -7,4 +7,9 @@ if ENV['SCOV']
 end
 
 require 'minitest/autorun'
+require 'bahia'
+
+class MiniTest::Unit::TestCase
+  include Bahia
+end
 
