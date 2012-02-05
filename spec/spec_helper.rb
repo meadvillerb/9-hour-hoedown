@@ -6,6 +6,9 @@ if ENV['SCOV']
   end
 end
 
+# bahia needs a non-nil RUBYLIB env var.
+ENV['RUBYLIB'] ||= ''
+
 require 'minitest/autorun'
 require 'bahia'
 
