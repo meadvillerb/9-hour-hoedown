@@ -1,7 +1,6 @@
 if ENV['SCOV']
   require 'simplecov'
   SimpleCov.start do
-    puts "I am started?! #{Process.pid}"
     add_filter "/spec/"
   end
 end
@@ -11,6 +10,7 @@ ENV['RUBYLIB'] ||= ''
 
 require 'minitest/autorun'
 require 'bahia'
+require 'sinapigen'
 
 class MiniTest::Unit::TestCase
   include Bahia
