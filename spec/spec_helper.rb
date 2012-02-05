@@ -9,6 +9,7 @@ end
 ENV['RUBYLIB'] ||= ''
 
 require 'minitest/autorun'
+require 'minitest/emoji'
 require 'bahia'
 require 'sinapigen'
 

@@ -6,6 +6,8 @@ group :development do
 end
 
 group :test do
+  gem 'minitest', '~> 2.11.0'
+  gem 'minitest-emoji'
   gem 'autotest'
   gem 'autotest-growl'
   gem 'simplecov'
