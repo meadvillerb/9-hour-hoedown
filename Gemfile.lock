@@ -1,0 +1,20 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    ZenTest (4.6.2)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
+    autotest-growl (0.2.16)
+    multi_json (1.0.4)
+    simplecov (0.5.4)
+      multi_json (~> 1.0.3)
+      simplecov-html (~> 0.5.3)
+    simplecov-html (0.5.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  autotest
+  autotest-growl
+  simplecov

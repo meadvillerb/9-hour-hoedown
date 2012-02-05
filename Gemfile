@@ -1,5 +1,9 @@
 # A sample Gemfile
 source "http://rubygems.org"
 
-gem "PDFKit"
+group :test do
+  gem 'autotest'
+  gem 'autotest-growl'
+  gem 'simplecov'
+end
 
