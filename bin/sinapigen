@@ -1,12 +1,42 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
+options = {
+  server: true,
+  client: true
+}
 
 OptionParser.new do |opts|
+  opts.on('--client') do
+    options[:server] = false
+  end
+
+  opts.on('--server') do
+    options[:client] = false
+  end
+
   opts.on_tail("-h", "--help", "Show this message") do
     puts opts
     exit
   end
 end.parse!
 
-puts "Usage: sinapigen"
+api_name=ARGV.first
+
+if api_name.nil? || api_name.empty?
+  puts "Usage: sinapigen [opts] <api_name>"
+else
+  Dir.mkdir("./#{api_name}")
+  Dir.chdir("./#{api_name}") do
+    if options[:client]
+      File.open("./client.rb", "w") do |f|
+        f.puts "Client"
+      end
+    end
+    if options[:server]
+      File.open("./server.rb", "w") do |f|
+        f.puts "Server"
+      end
+    end
+  end
+end
