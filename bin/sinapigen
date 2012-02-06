@@ -11,11 +11,11 @@ options = {
 }
 
 OptionParser.new do |opts|
-  opts.on('--client') do
+  opts.on('--client', "Generate the client template only") do
     options[:server] = false
   end
 
-  opts.on('--server') do
+  opts.on('--server', "Generate the server template only") do
     options[:client] = false
   end
 
