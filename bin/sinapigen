@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby
 
+$:.unshift File.expand_path('../../lib', __FILE__)
+
 require 'optparse'
+require 'sinapigen/command'
+
 options = {
   server: true,
   client: true
@@ -26,17 +30,6 @@ api_name=ARGV.first
 if api_name.nil? || api_name.empty?
   puts "Usage: sinapigen [opts] <api_name>"
 else
-  Dir.mkdir("./#{api_name}")
-  Dir.chdir("./#{api_name}") do
-    if options[:client]
-      File.open("./client.rb", "w") do |f|
-        f.puts "Client"
-      end
-    end
-    if options[:server]
-      File.open("./server.rb", "w") do |f|
-        f.puts "Server"
-      end
-    end
-  end
+  Sinapigen::Command.new("./#{api_name}").run(options)
 end
+
